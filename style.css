@@ -1,0 +1,386 @@
+:root {
+  --bg: #0d1117;
+  --bg-soft: #151b23;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --white: #ffffff;
+  --accent: #4f8cff;
+  --accent-2: #8b5cf6;
+  --border: #e5e7eb;
+  --shadow: 0 20px 50px rgba(0, 0, 0, 0.14);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", "YuGothic", "Segoe UI", sans-serif;
+  color: var(--text);
+  background: #f6f8fb;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1120px, calc(100% - 40px));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(13, 17, 23, 0.92);
+  backdrop-filter: blur(12px);
+  color: var(--white);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.header-inner {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  font-size: 1.05rem;
+}
+
+.logo span {
+  display: block;
+  font-size: 0.65rem;
+  color: #a7b7d9;
+  letter-spacing: 0.2em;
+}
+
+.site-nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.site-nav a {
+  padding: 9px 14px;
+  border-radius: 999px;
+  color: #dbeafe;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  background: rgba(255,255,255,0.12);
+  color: var(--white);
+}
+
+.nav-toggle {
+  display: none;
+  border: none;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  font-size: 1.4rem;
+  border-radius: 10px;
+  padding: 6px 10px;
+}
+
+.hero {
+  color: var(--white);
+  background:
+    radial-gradient(circle at top right, rgba(79, 140, 255, 0.42), transparent 38%),
+    linear-gradient(135deg, #0d1117 0%, #192133 55%, #101827 100%);
+  padding: 88px 0 96px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 42px;
+  align-items: center;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+.hero h1,
+.page-hero h1 {
+  font-size: clamp(2.3rem, 6vw, 5rem);
+  line-height: 1.05;
+  margin-bottom: 22px;
+}
+
+.lead {
+  font-size: 1.08rem;
+  color: #d6def1;
+  max-width: 720px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 800;
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  box-shadow: 0 12px 28px rgba(79, 140, 255, 0.35);
+}
+
+.btn.secondary {
+  border: 1px solid rgba(255,255,255,0.28);
+  color: white;
+}
+
+.hero-card {
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.16);
+  border-radius: 28px;
+  padding: 34px;
+  box-shadow: var(--shadow);
+}
+
+.profile-circle {
+  width: 96px;
+  height: 96px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 22px;
+}
+
+.hero-card ul {
+  padding-left: 20px;
+  color: #e6edff;
+}
+
+.section {
+  padding: 76px 0;
+}
+
+.section.dark {
+  background: var(--bg);
+  color: var(--white);
+}
+
+.section-title {
+  margin-bottom: 28px;
+}
+
+.section-title h2 {
+  font-size: clamp(1.7rem, 3vw, 2.7rem);
+  line-height: 1.25;
+}
+
+.about-grid,
+.hobby-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card,
+.hobby-card,
+.work-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+.card h3,
+.hobby-card h2,
+.work-content h2 {
+  margin-bottom: 10px;
+}
+
+.card p,
+.hobby-card p,
+.work-content p {
+  color: var(--muted);
+}
+
+.page-hero {
+  color: white;
+  background: linear-gradient(135deg, #101827, #263859);
+  padding: 84px 0;
+}
+
+.hobby-hero {
+  background:
+    radial-gradient(circle at top left, rgba(139, 92, 246, 0.42), transparent 35%),
+    linear-gradient(135deg, #111827, #2d1b4e);
+}
+
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.work-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.work-image {
+  min-height: 160px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #dbeafe, #ede9fe);
+  color: #1e3a8a;
+  font-weight: 900;
+  font-size: 1.7rem;
+  letter-spacing: 0.12em;
+}
+
+.work-content {
+  padding: 26px;
+}
+
+.tag {
+  color: var(--accent) !important;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hobby-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.hobby-card {
+  min-height: 220px;
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+}
+
+.contact-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.contact-box p {
+  color: #cbd5e1;
+}
+
+.site-footer {
+  background: #080b10;
+  color: #cbd5e1;
+  padding: 26px 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay {
+  transition-delay: .18s;
+}
+
+@media (max-width: 820px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 72px;
+    right: 20px;
+    left: 20px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+    background: #111827;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+  }
+
+  .site-nav.open {
+    display: flex;
+  }
+
+  .site-nav a {
+    text-align: center;
+  }
+
+  .hero-grid,
+  .about-grid,
+  .works-grid,
+  .hobby-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 64px 0 76px;
+  }
+
+  .contact-box,
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
